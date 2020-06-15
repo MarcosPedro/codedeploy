@@ -1,0 +1,2289 @@
+swagger: '2.0'
+info:
+  title: "Desenvolvimento Web"
+  version: "20200615132528"
+host: localhost
+schemes:
+  - http
+basePath: /AcevU8/rest
+produces:
+  - application/json
+paths:
+  /Perda/{PerdaGuid}:
+    get:
+      tags:
+        - Perda
+      operationId: "GetPerda"
+      summary: "Gets a Perda"
+      parameters:
+        - name: "PerdaGuid"
+          in: "path"
+          description: "Código"
+          required: true
+          type: "string"
+          format: "uuid"
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/Perda"
+        404:
+          description: "Data with the specified key could not be found"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+    post:
+      tags:
+        - Perda
+      operationId: "InsertPerda"
+      summary: "Inserts a Perda"
+      parameters:
+        - name: "PerdaGuid"
+          in: "path"
+          description: "Código"
+          required: true
+          type: "string"
+          format: "uuid"
+
+        - name: "Perda"
+          in: "body"
+          description: "SDT of Perda"
+          required: false
+          schema:
+            $ref: "#/definitions/Perda"
+       
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/Perda"
+        404:
+          description: "Data with the specified key could not be found"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        201:
+          description: "Created"
+          schema:
+            $ref: "#/definitions/Perda"
+    put:
+      tags:
+        - Perda
+      operationId: "UpdatePerda"
+      summary: "Updates a Perda"
+      parameters:
+        - name: "PerdaGuid"
+          in: "path"
+          description: "Código"
+          required: true
+          type: "string"
+          format: "uuid"
+
+        - name: "Perda"
+          in: "body"
+          description: "SDT of Perda"
+          required: true
+          schema:
+            $ref: "#/definitions/Perda"
+       
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/Perda"
+        404:
+          description: "Data with the specified key could not be found"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        409:
+          description: "Perda was changed"
+    delete:
+      tags:
+        - Perda
+      operationId: "DeletePerda"
+      summary: "Deletes a Perda"
+      parameters:
+        - name: "PerdaGuid"
+          in: "path"
+          description: "Código"
+          required: true
+          type: "string"
+          format: "uuid"
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/Perda"
+        404:
+          description: "Data with the specified key could not be found"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        204:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/Perda"
+  /WWPBaseObjects/SecUser/{SecUserId}:
+    get:
+      tags:
+        - SecUser
+        - WWPBaseObjects
+      operationId: "GetWWPBaseObjects.SecUser"
+      summary: "Gets a SecUser"
+      parameters:
+        - name: "SecUserId"
+          in: "path"
+          description: "User Id"
+          required: true
+          type: "integer"
+          format: "int32"
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/WWPBaseObjects.SecUser"
+        404:
+          description: "Data with the specified key could not be found"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+    post:
+      tags:
+        - SecUser
+        - WWPBaseObjects
+      operationId: "InsertWWPBaseObjects.SecUser"
+      summary: "Inserts a SecUser"
+      parameters:
+        - name: "SecUserId"
+          in: "path"
+          description: "User Id"
+          required: true
+          type: "integer"
+          format: "int32"
+
+        - name: "SecUser"
+          in: "body"
+          description: "SDT of WWPBaseObjects/SecUser"
+          required: false
+          schema:
+            $ref: "#/definitions/WWPBaseObjects.SecUser"
+       
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/WWPBaseObjects.SecUser"
+        404:
+          description: "Data with the specified key could not be found"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        201:
+          description: "Created"
+          schema:
+            $ref: "#/definitions/WWPBaseObjects.SecUser"
+    put:
+      tags:
+        - SecUser
+        - WWPBaseObjects
+      operationId: "UpdateWWPBaseObjects.SecUser"
+      summary: "Updates a SecUser"
+      parameters:
+        - name: "SecUserId"
+          in: "path"
+          description: "User Id"
+          required: true
+          type: "integer"
+          format: "int32"
+
+        - name: "SecUser"
+          in: "body"
+          description: "SDT of SecUser"
+          required: true
+          schema:
+            $ref: "#/definitions/WWPBaseObjects.SecUser"
+       
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/WWPBaseObjects.SecUser"
+        404:
+          description: "Data with the specified key could not be found"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        409:
+          description: "WWPBaseObjects.SecUser was changed"
+    delete:
+      tags:
+        - SecUser
+        - WWPBaseObjects
+      operationId: "DeleteWWPBaseObjects.SecUser"
+      summary: "Deletes a SecUser"
+      parameters:
+        - name: "SecUserId"
+          in: "path"
+          description: "User Id"
+          required: true
+          type: "integer"
+          format: "int32"
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/WWPBaseObjects.SecUser"
+        404:
+          description: "Data with the specified key could not be found"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/GxJsonError"
+        204:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/WWPBaseObjects.SecUser"
+  /AbordagemGravaWeb:
+    post:
+      tags:
+        - AbordagemGravaWeb
+      operationId: "AbordagemGravaWeb"
+      summary: "pr Grava Abordagem Web"
+      parameters:
+        - name: "AbordagemGravaWebInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/AbordagemGravaWebInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/AbordagemGravaWebOutput"
+        404:
+          description: "Not found"
+  /AbordagemServiceweb:
+    post:
+      tags:
+        - AbordagemServiceweb
+      operationId: "AbordagemServiceweb"
+      summary: "Abordagem Serviceweb"
+      parameters:
+        - name: "AbordagemServicewebInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/AbordagemServicewebInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/AbordagemServicewebOutput"
+        404:
+          description: "Not found"
+  /BodyAbordagemWeb:
+    post:
+      tags:
+        - BodyAbordagemWeb
+      operationId: "BodyAbordagemWeb"
+      summary: "Body Abordagem Web"
+      parameters:
+        - name: "BodyAbordagemWebInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/BodyAbordagemWebInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/BodyAbordagemWebOutput"
+        404:
+          description: "Not found"
+  /contatosServiceweb:
+    post:
+      tags:
+        - contatosServiceweb
+      operationId: "contatosServiceweb"
+      summary: "contatos Serviceweb"
+      parameters:
+        - name: "contatosServicewebInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/contatosServicewebInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/contatosServicewebOutput"
+        404:
+          description: "Not found"
+  /ContatosWWGetFilterData:
+    post:
+      tags:
+        - ContatosWWGetFilterData
+      operationId: "ContatosWWGetFilterData"
+      summary: "Contatos WWGet Filter Data"
+      parameters:
+        - name: "ContatosWWGetFilterDataInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/ContatosWWGetFilterDataInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/ContatosWWGetFilterDataOutput"
+        404:
+          description: "Not found"
+  /DirectionsServiceRequest:
+    post:
+      tags:
+        - DirectionsServiceRequest
+      operationId: "DirectionsServiceRequest"
+      summary: "Directions Service Request"
+      parameters:
+        - name: "DirectionsServiceRequestInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/DirectionsServiceRequestInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/DirectionsServiceRequestOutput"
+        404:
+          description: "Not found"
+  /EmpresaFilialDp:
+    get:
+      tags:
+        - EmpresaFilialDp
+      operationId: "EmpresaFilialDp"
+      summary: "Empresa Filial Dp"
+      parameters:
+        - name: "Configempresa"
+          in: "query"
+          required: true
+          type: "integer"
+          format: "int32"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/EmpresaFilialSdt_EmpresaFilialSdtItem"
+
+        404:
+          description: "Not found"
+  /EmpresaFilialWWGetFilterData:
+    post:
+      tags:
+        - EmpresaFilialWWGetFilterData
+      operationId: "EmpresaFilialWWGetFilterData"
+      summary: "Empresa Filial WWGet Filter Data"
+      parameters:
+        - name: "EmpresaFilialWWGetFilterDataInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/EmpresaFilialWWGetFilterDataInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/EmpresaFilialWWGetFilterDataOutput"
+        404:
+          description: "Not found"
+  /GetAbordagensWeb:
+    post:
+      tags:
+        - GetAbordagensWeb
+      operationId: "GetAbordagensWeb"
+      summary: "Get Abordagens Web"
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/GetAbordagensWebOutput"
+        404:
+          description: "Not found"
+  /Getsessaoweb:
+    post:
+      tags:
+        - Getsessaoweb
+      operationId: "Getsessaoweb"
+      summary: "Getsessaoweb"
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/GetsessaowebOutput"
+        404:
+          description: "Not found"
+  /LoginWeb:
+    post:
+      tags:
+        - LoginWeb
+      operationId: "LoginWeb"
+      summary: "Login Web"
+      parameters:
+        - name: "LoginWebInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/LoginWebInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/LoginWebOutput"
+        404:
+          description: "Not found"
+  /PerdaService:
+    post:
+      tags:
+        - PerdaService
+      operationId: "PerdaService"
+      summary: "Perda Service"
+      parameters:
+        - name: "PerdaServiceInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/PerdaServiceInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/PerdaServiceOutput"
+        404:
+          description: "Not found"
+  /PerdaWWGetFilterData:
+    post:
+      tags:
+        - PerdaWWGetFilterData
+      operationId: "PerdaWWGetFilterData"
+      summary: "Perda WWGet Filter Data"
+      parameters:
+        - name: "PerdaWWGetFilterDataInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/PerdaWWGetFilterDataInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/PerdaWWGetFilterDataOutput"
+        404:
+          description: "Not found"
+  /SDPlusBaseObjects/SDPCategoryListDP:
+    get:
+      tags:
+        - SDPlusBaseObjects
+      operationId: "SDPlusBaseObjects.SDPCategoryListDP"
+      summary: "SDPCategory List DP"
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/SDPMultiColumnOptions_SDPMultiColumnOptionsItem"
+
+        404:
+          description: "Not found"
+  /SDPlusBaseObjects/SDPSampleChartData:
+    post:
+      tags:
+        - SDPlusBaseObjects
+      operationId: "SDPlusBaseObjects.SDPSampleChartData"
+      summary: "SDPSample Chart Data"
+      parameters:
+        - name: "SDPSampleChartDataInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/SDPlusBaseObjects.SDPSampleChartDataInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/SDPlusBaseObjects.SDPSampleChartDataOutput"
+        404:
+          description: "Not found"
+  /SDPlusBaseObjects/SDPWebServerSessionGet:
+    post:
+      tags:
+        - SDPlusBaseObjects
+      operationId: "SDPlusBaseObjects.SDPWebServerSessionGet"
+      summary: "SDPWeb Server Session Get"
+      parameters:
+        - name: "SDPWebServerSessionGetInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/SDPlusBaseObjects.SDPWebServerSessionGetInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/SDPlusBaseObjects.SDPWebServerSessionGetOutput"
+        404:
+          description: "Not found"
+  /SDPlusBaseObjects/SDPWebServerSessionSet:
+    post:
+      tags:
+        - SDPlusBaseObjects
+      operationId: "SDPlusBaseObjects.SDPWebServerSessionSet"
+      summary: "SDPWeb Server Session Set"
+      parameters:
+        - name: "SDPWebServerSessionSetInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/SDPlusBaseObjects.SDPWebServerSessionSetInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+        404:
+          description: "Not found"
+  /setAbordagensweb:
+    post:
+      tags:
+        - setAbordagensweb
+      operationId: "setAbordagensweb"
+      summary: "set Abordagensweb"
+      parameters:
+        - name: "setAbordagenswebInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/setAbordagenswebInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+        404:
+          description: "Not found"
+  /setsessaoweb:
+    post:
+      tags:
+        - setsessaoweb
+      operationId: "setsessaoweb"
+      summary: "setsessaoweb"
+      parameters:
+        - name: "setsessaowebInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/setsessaowebInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+        404:
+          description: "Not found"
+  /WWPBaseObjects/SecFunctionalityFilterParentWWGetFilterData:
+    post:
+      tags:
+        - WWPBaseObjects
+      operationId: "WWPBaseObjects.SecFunctionalityFilterParentWWGetFilterData"
+      summary: "Sec Functionality Filter Parent WWGet Filter Data"
+      parameters:
+        - name: "SecFunctionalityFilterParentWWGetFilterDataInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/WWPBaseObjects.SecFunctionalityFilterParentWWGetFilterDataInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/WWPBaseObjects.SecFunctionalityFilterParentWWGetFilterDataOutput"
+        404:
+          description: "Not found"
+  /WWPBaseObjects/SecFunctionalitySecFunctionalityRoleWCGetFilterData:
+    post:
+      tags:
+        - WWPBaseObjects
+      operationId: "WWPBaseObjects.SecFunctionalitySecFunctionalityRoleWCGetFilterData"
+      summary: "Sec Functionality Sec Functionality Role WCGet Filter Data"
+      parameters:
+        - name: "SecFunctionalitySecFunctionalityRoleWCGetFilterDataInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/WWPBaseObjects.SecFunctionalitySecFunctionalityRoleWCGetFilterDataInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/WWPBaseObjects.SecFunctionalitySecFunctionalityRoleWCGetFilterDataOutput"
+        404:
+          description: "Not found"
+  /WWPBaseObjects/SecFunctionalityWWGetFilterData:
+    post:
+      tags:
+        - WWPBaseObjects
+      operationId: "WWPBaseObjects.SecFunctionalityWWGetFilterData"
+      summary: "Sec Functionality WWGet Filter Data"
+      parameters:
+        - name: "SecFunctionalityWWGetFilterDataInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/WWPBaseObjects.SecFunctionalityWWGetFilterDataInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/WWPBaseObjects.SecFunctionalityWWGetFilterDataOutput"
+        404:
+          description: "Not found"
+  /WWPBaseObjects/SecRoleWWGetFilterData:
+    post:
+      tags:
+        - WWPBaseObjects
+      operationId: "WWPBaseObjects.SecRoleWWGetFilterData"
+      summary: "Sec Role WWGet Filter Data"
+      parameters:
+        - name: "SecRoleWWGetFilterDataInput"
+          in: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/WWPBaseObjects.SecRoleWWGetFilterDataInput"
+
+
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/WWPBaseObjects.SecRoleWWGetFilterDataOutput"
+        404:
+          description: "Not found"
+  /gxobject:
+    post:
+      tags:
+        - gxobject
+      operationId: "gxobject"
+      summary: "GeneXus Upload Services"
+
+      responses:
+        200:
+          description: "Successful operation"
+        404:
+          description: "Not found"
+definitions:
+  Perda:
+    properties:
+      PerdaGuid:
+        description: Código
+        type: "string"
+        format: "uuid"
+
+      PerdaTexto:
+        description: Perda Texto
+        type: "string"
+
+      PerdaUsuCod:
+        description: Perda Usu Cod
+        type: "string"
+
+      PerdaUsuNom:
+        description: Nome
+        type: "string"
+
+      PerdaCliente:
+        description: Cliente
+        type: "string"
+
+      PerdaData:
+        description: Data
+        type: "string"
+        format: "date"
+
+      PerdaRevenda:
+        description: Revenda
+        type: "integer"
+        format: "int32"
+
+      ProdutosCod:
+        description: Produtos Cod
+        type: "string"
+
+      ProdutosAplicacao:
+        description: Aplicação
+        type: "string"
+
+      ProdutosMedida:
+        description: Produtos Medida
+        type: "string"
+
+      ProdutosGrupo:
+        description: Grupo
+        type: "string"
+
+      ProdutosDescricao:
+        description: Descrição
+        type: "string"
+
+      PerdaPreco:
+        description: Perda Preco
+        type: "number"
+        format: "double"
+
+      PerdaVolume:
+        description: Volume Perdio
+        type: "integer"
+        format: "int32"
+
+      PerdaLojaConc:
+        description: Loja Concorrente
+        type: "string"
+
+      PerdaMarca:
+        description: Marca
+        type: "string"
+
+      PerdaModeloConc:
+        description: Modelo Concorrente
+        type: "string"
+
+      PerdaPrecoConc:
+        description: Preço Concorrente
+        type: "number"
+        format: "double"
+
+      PerdaMotivoPerd:
+        description: Motivo Perda
+        type: "string"
+
+      PerdaVolPerdido:
+        description: Total Perdido
+        type: "number"
+        format: "double"
+
+      gx_md5_hash:
+        description: gx_md5_hash is an identifier for a specific version of a resource, it is used for optimistic concurrency check. It is required for update and delete operations and  ignored on insert.
+        type: "string"
+
+
+    required:
+      - PerdaGuid
+
+
+  WWPBaseObjects.SecUser:
+    properties:
+      SecUserId:
+        description: User Id
+        type: "integer"
+        format: "int32"
+
+      SecUserName:
+        description: User Name
+        type: "string"
+
+      SecUserPassword:
+        description: User Password
+        type: "string"
+
+      gx_md5_hash:
+        description: gx_md5_hash is an identifier for a specific version of a resource, it is used for optimistic concurrency check. It is required for update and delete operations and  ignored on insert.
+        type: "string"
+
+
+    required:
+      - SecUserId
+
+
+  AbordagemGravaWebOutput:
+    properties:
+      sdtsessao:
+        description: sdt Sessao
+        $ref: "#/definitions/sdtSessao"
+      Messages:
+        description: Messages
+        type: array
+        items:
+          $ref: "#/definitions/Messages_Message"
+
+
+  AbordagemServicewebOutput:
+    properties:
+      isError:
+        type: "boolean"
+
+
+  BodyAbordagemWebOutput:
+    properties:
+      body:
+        type: "string"
+
+
+  contatosServicewebOutput:
+    properties:
+      mz003stclies:
+        description: MZ003 STCLIES
+        $ref: "#/definitions/MZ003STCLIES"
+
+
+  ContatosWWGetFilterDataOutput:
+    properties:
+      OptionsJson:
+        type: "string"
+      OptionsDescJson:
+        type: "string"
+      OptionIndexesJson:
+        type: "string"
+
+
+  DirectionsServiceRequestOutput:
+    properties:
+      Routes:
+        description: Route
+        type: array
+        items:
+          $ref: "#/definitions/Route"
+      errorMessages:
+        description: Messages
+        type: array
+        items:
+          $ref: "#/definitions/Messages_Message"
+
+
+  EmpresaFilialWWGetFilterDataOutput:
+    properties:
+      OptionsJson:
+        type: "string"
+      OptionsDescJson:
+        type: "string"
+      OptionIndexesJson:
+        type: "string"
+
+
+  GetAbordagensWebOutput:
+    properties:
+      sdtAbordagemCollection:
+        description: sdt Abordagem
+        type: array
+        items:
+          $ref: "#/definitions/sdtAbordagem"
+
+
+  GetsessaowebOutput:
+    properties:
+      sdtsessao:
+        description: sdt Sessao
+        $ref: "#/definitions/sdtSessao"
+
+
+  LoginWebOutput:
+    properties:
+      WSDLMZ001STUSRS:
+        description: WSDLMZ001 STUSRS
+        $ref: "#/definitions/WSDLMZ001STUSRS"
+
+
+  PerdaServiceOutput:
+    properties:
+      messages:
+        description: Messages
+        type: array
+        items:
+          $ref: "#/definitions/Messages_Message"
+
+
+  PerdaWWGetFilterDataOutput:
+    properties:
+      OptionsJson:
+        type: "string"
+      OptionsDescJson:
+        type: "string"
+      OptionIndexesJson:
+        type: "string"
+
+
+  SDPlusBaseObjects.SDPSampleChartDataOutput:
+    properties:
+      SDPlusChartDataSampleCollection:
+        description: SDPlus Chart Data Sample
+        type: array
+        items:
+          $ref: "#/definitions/SDPlusChartDataSample"
+
+
+  SDPlusBaseObjects.SDPWebServerSessionGetOutput:
+    properties:
+      ParameterValue:
+        type: "string"
+
+
+  WWPBaseObjects.SecFunctionalityFilterParentWWGetFilterDataOutput:
+    properties:
+      OptionsJson:
+        type: "string"
+      OptionsDescJson:
+        type: "string"
+      OptionIndexesJson:
+        type: "string"
+
+
+  WWPBaseObjects.SecFunctionalitySecFunctionalityRoleWCGetFilterDataOutput:
+    properties:
+      OptionsJson:
+        type: "string"
+      OptionsDescJson:
+        type: "string"
+      OptionIndexesJson:
+        type: "string"
+
+
+  WWPBaseObjects.SecFunctionalityWWGetFilterDataOutput:
+    properties:
+      OptionsJson:
+        type: "string"
+      OptionsDescJson:
+        type: "string"
+      OptionIndexesJson:
+        type: "string"
+
+
+  WWPBaseObjects.SecRoleWWGetFilterDataOutput:
+    properties:
+      OptionsJson:
+        type: "string"
+      OptionsDescJson:
+        type: "string"
+      OptionIndexesJson:
+        type: "string"
+
+
+
+  AbordagemGravaWebInput:
+    properties:
+      sdtsessao:
+        description: sdt Sessao
+        $ref: "#/definitions/sdtSessao"
+      IsMsg:
+        type: "boolean"
+
+
+  AbordagemServicewebInput:
+    properties:
+      sdtAbordagem:
+        description: sdt Abordagem
+        $ref: "#/definitions/sdtAbordagem"
+
+
+  BodyAbordagemWebInput:
+    properties:
+      sdtSessao:
+        description: sdt Sessao
+        $ref: "#/definitions/sdtSessao"
+      sdtAbordagem:
+        description: sdt Abordagem
+        $ref: "#/definitions/sdtAbordagem"
+
+
+  contatosServicewebInput:
+    properties:
+      sdtsessao:
+        description: sdt Sessao
+        $ref: "#/definitions/sdtSessao"
+      cnpj:
+        type: "string"
+
+
+  ContatosWWGetFilterDataInput:
+    properties:
+      DDOName:
+        type: "string"
+      SearchTxt:
+        type: "string"
+      SearchTxtTo:
+        type: "string"
+
+
+  DirectionsServiceRequestInput:
+    properties:
+      DirectionsServiceProvider:
+        type: "string"
+      DirectionsRequestParameters:
+        description: Directions Request Parameters
+        $ref: "#/definitions/DirectionsRequestParameters"
+
+
+  EmpresaFilialWWGetFilterDataInput:
+    properties:
+      DDOName:
+        type: "string"
+      SearchTxt:
+        type: "string"
+      SearchTxtTo:
+        type: "string"
+
+
+  LoginWebInput:
+    properties:
+      empresaFilialCod:
+        type: "string"
+      User:
+        type: "string"
+      Password:
+        type: "string"
+      sdtconfig:
+        description: sdt Config
+        $ref: "#/definitions/sdtConfig"
+
+
+  PerdaServiceInput:
+    properties:
+      SdtPerda:
+        description: sdt Perda
+        $ref: "#/definitions/sdtPerda"
+
+
+  PerdaWWGetFilterDataInput:
+    properties:
+      DDOName:
+        type: "string"
+      SearchTxt:
+        type: "string"
+      SearchTxtTo:
+        type: "string"
+
+
+  SDPlusBaseObjects.SDPSampleChartDataInput:
+    properties:
+      UseRandom:
+        type: "boolean"
+
+
+  SDPlusBaseObjects.SDPWebServerSessionGetInput:
+    properties:
+      ParameterKey:
+        type: "string"
+
+
+  SDPlusBaseObjects.SDPWebServerSessionSetInput:
+    properties:
+      ParameterKey:
+        type: "string"
+      ParameterValue:
+        type: "string"
+
+
+  setAbordagenswebInput:
+    properties:
+      sdtAbordagens:
+        description: sdt Abordagem
+        type: array
+        items:
+          $ref: "#/definitions/sdtAbordagem"
+
+
+  setsessaowebInput:
+    properties:
+      sdtSessao:
+        description: sdt Sessao
+        $ref: "#/definitions/sdtSessao"
+
+
+  WWPBaseObjects.SecFunctionalityFilterParentWWGetFilterDataInput:
+    properties:
+      DDOName:
+        type: "string"
+      SearchTxt:
+        type: "string"
+      SearchTxtTo:
+        type: "string"
+
+
+  WWPBaseObjects.SecFunctionalitySecFunctionalityRoleWCGetFilterDataInput:
+    properties:
+      DDOName:
+        type: "string"
+      SearchTxt:
+        type: "string"
+      SearchTxtTo:
+        type: "string"
+
+
+  WWPBaseObjects.SecFunctionalityWWGetFilterDataInput:
+    properties:
+      DDOName:
+        type: "string"
+      SearchTxt:
+        type: "string"
+      SearchTxtTo:
+        type: "string"
+
+
+  WWPBaseObjects.SecRoleWWGetFilterDataInput:
+    properties:
+      DDOName:
+        type: "string"
+      SearchTxt:
+        type: "string"
+      SearchTxtTo:
+        type: "string"
+
+
+
+  DirectionsRequestParameters:
+    properties:
+      sourceLocation:
+        description: source Location
+        type: "string"
+
+      destinationLocation:
+        description: destination Location
+        type: "string"
+
+      transportType:
+        description: transport Type
+        type: "string"
+
+      requestAlternateRoutes:
+        description: request Alternate Routes
+        type: "boolean"
+
+
+
+
+  EmpresaFilialSdt_EmpresaFilialSdtItem:
+    properties:
+      EmpresaFilialCod:
+        description: Empresa Filial Cod
+        type: "string"
+
+      EmpresaEmpresa:
+        description: Empresa Empresa
+        type: "integer"
+        format: "int32"
+
+      EmpresaFilialNome:
+        description: Empresa Filial Nome
+        type: "string"
+
+      EmpresaFilialCidade:
+        description: Cidade
+        type: "string"
+
+      EmpresaFilialUrl:
+        description: Empresa Filial Url
+        type: "string"
+
+      EmpresaFilialHost:
+        description: Empresa Filial Host
+        type: "string"
+
+      EmpresaFiliaPort:
+        description: Empresa Filia Port
+        type: "integer"
+        format: "int64"
+
+      EmpresaFilialBaseUrl:
+        description: Empresa Filial Base Url
+        type: "string"
+
+      EmpresaFilialTelegram:
+        description: Empresa Filial Telegram
+        type: "string"
+
+
+
+
+
+  Messages_Message:
+    properties:
+      Id:
+        description: Id
+        type: "string"
+
+      Type:
+        description: Type
+        type: "integer"
+        format: "int32"
+
+      Description:
+        description: Description
+        type: "string"
+
+
+
+
+
+  MZ003STCLIE:
+    properties:
+      CEP:
+        description: CEP
+        type: "string"
+
+      CGCCPF:
+        description: CGCCPF
+        type: "string"
+
+      CIDADE:
+        description: CIDADE
+        type: "string"
+
+      CMESSAGE:
+        description: CMESSAGE
+        type: "string"
+
+      CODCLI:
+        description: CODCLI
+        type: "string"
+
+      COMPLEMENTO:
+        description: COMPLEMENTO
+        type: "string"
+
+      CRET:
+        description: CRET
+        type: "string"
+
+      DDD1:
+        description: DDD1
+        type: "string"
+
+      DDD2:
+        description: DDD2
+        type: "string"
+
+      EMAIL:
+        description: EMAIL
+        type: "string"
+
+      ENDERECO:
+        description: ENDERECO
+        type: "string"
+
+      FONE1:
+        description: FONE1
+        type: "string"
+
+      FONE2:
+        description: FONE2
+        type: "string"
+
+      LOCALIZACAO:
+        description: LOCALIZACAO
+        type: "string"
+
+      LOJA:
+        description: LOJA
+        type: "string"
+
+      NOME:
+        description: NOME
+        type: "string"
+
+      NUMERO:
+        description: NUMERO
+        type: "string"
+
+      PESSOA:
+        description: PESSOA
+        type: "string"
+
+      TIPOCLI:
+        description: TIPOCLI
+        type: "string"
+
+      UF:
+        description: UF
+        type: "string"
+
+
+
+
+  MZ003STCLIES:
+    properties:
+      AREGS:
+        description: MZ003 STCLIE
+        type: array
+        items:
+          $ref: "#/definitions/MZ003STCLIE_STCLIE"
+
+      CMESSAGE:
+        description: CMESSAGE
+        type: "string"
+
+      CRET:
+        description: CRET
+        type: "string"
+
+
+
+
+  Route:
+    properties:
+      name:
+        description: The expected travel time in seconds
+        type: "string"
+
+      advisoryNotices:
+        description: A collection of advisory notice strings for the route
+        type: array
+        items:
+          type: "string"
+
+      distance:
+        description: The route distance in meters
+        type: "number"
+        format: "double"
+
+      expectedTravelTime:
+        description: The expected travel time in seconds
+        type: "number"
+        format: "double"
+
+      transportType:
+        description: The overall route transport type
+        type: "string"
+
+      geoline:
+        description: The route geometry
+        type: "string"
+
+
+
+
+  SDPlusChartDataSample:
+    properties:
+      Category:
+        description: Category
+        type: "string"
+
+      CategoryNum:
+        description: Category Num
+        type: "integer"
+        format: "int32"
+
+      CategoryDate:
+        description: Category Date
+        type: "string"
+        format: "date"
+
+      Serie1:
+        description: Serie1
+        type: "integer"
+        format: "int64"
+
+      Serie2:
+        description: Serie2
+        type: "integer"
+        format: "int64"
+
+      Serie3:
+        description: Serie3
+        type: "integer"
+        format: "int64"
+
+
+
+
+  SDPMenuInfo:
+    properties:
+      Image:
+        description: Image
+        type: "string"
+
+      TitleInfo:
+        description: Title Info
+        type: "string"
+
+      SecondaryInfo:
+        description: Secondary Info
+        type: "string"
+
+      ComponentToCall:
+        description: Component To Call
+        type: "string"
+
+      Id:
+        description: Id
+        type: "string"
+
+      InfoField1:
+        description: Info Field1
+        type: "string"
+
+      InfoField2:
+        description: Info Field2
+        type: "string"
+
+      InfoField3:
+        description: Info Field3
+        type: "string"
+
+      InfoFieldNumeric1:
+        description: Info Field Numeric1
+        type: "number"
+        format: "double"
+
+      InfoFieldNumeric2:
+        description: Info Field Numeric2
+        type: "number"
+        format: "double"
+
+      InfoUrl:
+        description: Info Url
+        type: "string"
+
+
+
+
+  SDPMultiColumnOptions_SDPMultiColumnOptionsItem:
+    properties:
+      Column1:
+        description: SDPMenu Info
+        $ref: "#/definitions/SDPMenuInfo"
+
+      Column2:
+        description: SDPMenu Info
+        $ref: "#/definitions/SDPMenuInfo"
+
+      Column3:
+        description: SDPMenu Info
+        $ref: "#/definitions/SDPMenuInfo"
+
+      Column4:
+        description: SDPMenu Info
+        $ref: "#/definitions/SDPMenuInfo"
+
+      Column5:
+        description: SDPMenu Info
+        $ref: "#/definitions/SDPMenuInfo"
+
+
+
+
+
+  sdtAbordagem:
+    properties:
+      AbordagemId:
+        description: Abordagem Id
+        type: "integer"
+        format: "int64"
+
+      ContatosCod:
+        description: Contatos Cod
+        type: "string"
+
+      contatosnome:
+        description: Nome
+        type: "string"
+
+      ContatosTelefone1:
+        description: Telefone
+        type: "string"
+
+      Abordagem:
+        description: Abordagem
+        type: "string"
+
+      TipoAbordagem:
+        description: Tipo Abordagem
+        type: "string"
+
+      AbordagemTipdesc:
+        description: Abordagem Tipdesc
+        type: "string"
+
+      AbordagemObjProxVis:
+        description: Abordagem Obj Prox Vis
+        type: "string"
+
+      AbordagemPessoa:
+        description: Abordagem Pessoa
+        type: "string"
+
+      AbordagemDataHora:
+        description: Abordagem Data Hora
+        type: "string"
+        format: "date-time"
+
+      AbordagemData:
+        description: Abordagem Data
+        type: "string"
+        format: "date"
+
+      AbordagemHora:
+        description: Abordagem Hora
+        type: "string"
+        format: "date-time"
+
+      AbordagemLoja:
+        description: Abordagem Loja
+        type: "string"
+
+      AbordagemSincronizado:
+        description: Abordagem Sincronizado
+        type: "boolean"
+
+      AbordagemSincDataHora:
+        description: Data Hora Sincronizacao
+        type: "string"
+        format: "date-time"
+
+      AbordagemDataProx:
+        description: Data Próxima Visita
+        type: "string"
+        format: "date"
+
+      loja:
+        description: loja
+        type: "string"
+
+      AbordagemContProdutivo:
+        description: Contato Produtivo
+        type: "boolean"
+
+      AbordagemOfeConsorcio:
+        description: Ofereceu Consórcio
+        type: "boolean"
+
+      AbordagemOfeSeguro:
+        description: Ofereceu Seguro
+        type: "boolean"
+
+      AbordagemMesSeguro:
+        description: Mês Vencimento Seguro
+        type: "string"
+
+      AbordagemNomeSeg:
+        description: Nome Seguradora
+        type: "string"
+
+      AbordagemQtdePneus:
+        description: Quantidade de Pneus Vendidos
+        type: "integer"
+        format: "int32"
+
+      AbordagemStatusAbordagem:
+        description: Abordagem Status Abordagem
+        type: "string"
+
+      AbordagemLocalizacao:
+        description: Abordagem Localizacao
+        type: "string"
+
+      Dias:
+        description: Dias
+        type: "integer"
+        format: "int64"
+
+      AbordagemIntegrou:
+        description: Abordagem Integrou
+        type: "boolean"
+
+      AbordagemIntegrouDataHora:
+        description: dataHora
+        type: "string"
+        format: "date-time"
+
+      AbordagemStatusDesc:
+        description: Descrição do Status
+        type: "string"
+
+      AbordagemTipoDesc:
+        description: Abordagem Tipo Desc
+        type: "string"
+
+
+
+
+  sdtConfig:
+    properties:
+      ConfigId:
+        description: Config Id
+        type: "integer"
+        format: "int64"
+
+      ConfigUrl:
+        description: Config Url
+        type: "string"
+
+      ConfigHost:
+        description: Config Host
+        type: "string"
+
+      ConfigPort:
+        description: Config Port
+        type: "integer"
+        format: "int64"
+
+      ConfigBaseU:
+        description: Config Base U
+        type: "string"
+
+      ConfigEmpresa:
+        description: Config Empresa
+        type: "integer"
+        format: "int32"
+
+      ConfigLogo:
+        description: Config Logo
+        type: "string"
+
+      ConfigLogBase64:
+        description: Config Log Base64
+        type: "string"
+
+      ConfigTimeOut:
+        description: Config Time Out
+        type: "integer"
+        format: "int64"
+
+      configFundologin:
+        description: config Fundologin
+        type: "integer"
+        format: "int64"
+
+      ConfigTelegramId:
+        description: Config Telegram Id
+        type: "string"
+
+      EmpresaFilialCod:
+        description: Empresa Filial Cod
+        type: "string"
+
+      EmpresaFilialNome:
+        description: Empresa Filial Nome
+        type: "string"
+
+      UrlService:
+        description: Url Service
+        type: "string"
+
+      IsDefault:
+        description: Is Default
+        type: "boolean"
+
+
+
+
+  sdtPerda:
+    properties:
+      PerdaGuid:
+        description: Código
+        type: "string"
+        format: "uuid"
+
+      PerdaTexto:
+        description: Perda Texto
+        type: "string"
+
+      PerdaUsuCod:
+        description: Perda Usu Cod
+        type: "string"
+
+      PerdaUsuNom:
+        description: Nome
+        type: "string"
+
+      PerdaCliente:
+        description: Cliente
+        type: "string"
+
+      PerdaData:
+        description: Data
+        type: "string"
+        format: "date"
+
+      PerdaRevenda:
+        description: Revenda
+        type: "integer"
+        format: "int32"
+
+      ProdutosCod:
+        description: Produtos Cod
+        type: "string"
+
+      ProdutosAplicacao:
+        description: Aplicação
+        type: "string"
+
+      ProdutosMedida:
+        description: Produtos Medida
+        type: "string"
+
+      ProdutosGrupo:
+        description: Grupo
+        type: "string"
+
+      ProdutosDescricao:
+        description: Descrição
+        type: "string"
+
+      PerdaPreco:
+        description: Perda Preco
+        type: "number"
+        format: "double"
+
+      PerdaVolume:
+        description: Volume Perdio
+        type: "integer"
+        format: "int32"
+
+      PerdaLojaConc:
+        description: Loja Concorrente
+        type: "string"
+
+      PerdaMarca:
+        description: Marca
+        type: "string"
+
+      PerdaModeloConc:
+        description: Modelo Concorrente
+        type: "string"
+
+      PerdaPrecoConc:
+        description: Perda Preco Conc
+        type: "number"
+        format: "double"
+
+      PerdaMotivoPerd:
+        description: Motivo Perda
+        type: "string"
+
+      Mode:
+        description: Mode
+        type: "string"
+
+
+
+
+  sdtSessao:
+    properties:
+      usuarioCod:
+        description: usuario Cod
+        type: "string"
+
+      sdtSessaoData:
+        description: sdt Sessao Data
+        type: "string"
+        format: "date-time"
+
+      UltAtualizacao:
+        description: Ult Atualizacao
+        type: "string"
+        format: "date-time"
+
+      userid:
+        description: userid
+        type: "string"
+
+      Usuario:
+        description: Usuario
+        type: "string"
+
+      PriNome:
+        description: Pri Nome
+        type: "string"
+
+      LoginOk:
+        description: Login Ok
+        type: "boolean"
+
+      User:
+        description: User
+        type: "string"
+
+      Password:
+        description: Password
+        type: "string"
+
+      ConfigPort:
+        description: Config Port
+        type: "integer"
+        format: "int64"
+
+      configempresa:
+        description: Config Empresa
+        type: "integer"
+        format: "int32"
+
+      SiglaEmp:
+        description: Sigla Emp
+        type: "string"
+
+      Versao:
+        description: Versao
+        type: "string"
+
+      Programa:
+        description: Programa
+        type: "string"
+
+      empresafilialcod:
+        description: Empresa Filial Cod
+        type: "string"
+
+      EmpresaFilialNome:
+        description: Empresa Filial Nome
+        type: "string"
+
+
+
+
+  WSDLMZ001STAGE:
+    properties:
+      AAGECLIENTES:
+        description: WSDLMZ001 STAGECLI
+        type: array
+        items:
+          $ref: "#/definitions/WSDLMZ001STAGECLI_STAGECLI"
+
+      CMESSAGE:
+        description: CMESSAGE
+        type: "string"
+
+      CRET:
+        description: CRET
+        type: "string"
+
+      DATACONTATO:
+        description: DATACONTATO
+        type: "string"
+
+
+
+
+  WSDLMZ001STAGECLI:
+    properties:
+      ACLIENTES:
+        description: WSDLMZ001 STCLI
+        type: array
+        items:
+          $ref: "#/definitions/WSDLMZ001STCLI_STCLI"
+
+      CMESSAGE:
+        description: CMESSAGE
+        type: "string"
+
+      CODCLI:
+        description: CODCLI
+        type: "string"
+
+      CRET:
+        description: CRET
+        type: "string"
+
+      DATACONTATO:
+        description: DATACONTATO
+        type: "string"
+
+      LOJA:
+        description: LOJA
+        type: "string"
+
+      OBJETIVOVISITA:
+        description: OBJETIVOVISITA
+        type: "string"
+
+
+
+
+  WSDLMZ001STCLI:
+    properties:
+      ACLIVIZ:
+        description: WSDLMZ001 STCLIVIZ
+        type: array
+        items:
+          $ref: "#/definitions/WSDLMZ001STCLIVIZ_STCLIVIZ"
+
+      AULTCON:
+        description: WSDLMZ001 STUCON
+        type: array
+        items:
+          $ref: "#/definitions/WSDLMZ001STUCON_STUCON"
+
+      CEP:
+        description: CEP
+        type: "string"
+
+      CGCCPF:
+        description: CGCCPF
+        type: "string"
+
+      CIDADE:
+        description: CIDADE
+        type: "string"
+
+      CMESSAGE:
+        description: CMESSAGE
+        type: "string"
+
+      CODCLI:
+        description: CODCLI
+        type: "string"
+
+      COMPLEMENTO:
+        description: COMPLEMENTO
+        type: "string"
+
+      CRET:
+        description: CRET
+        type: "string"
+
+      DDD1:
+        description: DDD1
+        type: "string"
+
+      DDD2:
+        description: DDD2
+        type: "string"
+
+      EMAIL:
+        description: EMAIL
+        type: "string"
+
+      ENDERECO:
+        description: ENDERECO
+        type: "string"
+
+      FONE1:
+        description: FONE1
+        type: "string"
+
+      FONE2:
+        description: FONE2
+        type: "string"
+
+      LOCALIZACAO:
+        description: LOCALIZACAO
+        type: "string"
+
+      LOJA:
+        description: LOJA
+        type: "string"
+
+      NOME:
+        description: NOME
+        type: "string"
+
+      NUMERO:
+        description: NUMERO
+        type: "string"
+
+      PESSOA:
+        description: PESSOA
+        type: "string"
+
+      TIPOCLI:
+        description: TIPOCLI
+        type: "string"
+
+      UF:
+        description: UF
+        type: "string"
+
+
+
+
+  WSDLMZ001STCLIVIZ:
+    properties:
+      CEP:
+        description: CEP
+        type: "string"
+
+      CGCCPF:
+        description: CGCCPF
+        type: "string"
+
+      CIDADE:
+        description: CIDADE
+        type: "string"
+
+      CMESSAGE:
+        description: CMESSAGE
+        type: "string"
+
+      CODCLI:
+        description: CODCLI
+        type: "string"
+
+      CODCLIVIZ:
+        description: CODCLIVIZ
+        type: "string"
+
+      COMPLEMENTO:
+        description: COMPLEMENTO
+        type: "string"
+
+      CRET:
+        description: CRET
+        type: "string"
+
+      DDD1:
+        description: DDD1
+        type: "string"
+
+      DDD2:
+        description: DDD2
+        type: "string"
+
+      DISTANCIA:
+        description: DISTANCIA
+        type: "string"
+
+      EMAIL:
+        description: EMAIL
+        type: "string"
+
+      ENDERECO:
+        description: ENDERECO
+        type: "string"
+
+      FONE1:
+        description: FONE1
+        type: "string"
+
+      FONE2:
+        description: FONE2
+        type: "string"
+
+      LOCALIZACAO:
+        description: LOCALIZACAO
+        type: "string"
+
+      LOJA:
+        description: LOJA
+        type: "string"
+
+      LOJAVIZ:
+        description: LOJAVIZ
+        type: "string"
+
+      NOME:
+        description: NOME
+        type: "string"
+
+      NUMERO:
+        description: NUMERO
+        type: "string"
+
+      PESSOA:
+        description: PESSOA
+        type: "string"
+
+      TIPOCLI:
+        description: TIPOCLI
+        type: "string"
+
+      UF:
+        description: UF
+        type: "string"
+
+
+
+
+  WSDLMZ001STUCON:
+    properties:
+      ABORDAGEM:
+        description: ABORDAGEM
+        type: "string"
+
+      CMESSAGE:
+        description: CMESSAGE
+        type: "string"
+
+      CODCLI:
+        description: CODCLI
+        type: "string"
+
+      CRET:
+        description: CRET
+        type: "string"
+
+      DATACONTATO:
+        description: DATACONTATO
+        type: "string"
+
+      LOJA:
+        description: LOJA
+        type: "string"
+
+      PESSOACONTATO:
+        description: PESSOACONTATO
+        type: "string"
+
+
+
+
+  WSDLMZ001STUSR:
+    properties:
+      AAGENDA:
+        description: WSDLMZ001 STAGE
+        type: array
+        items:
+          $ref: "#/definitions/WSDLMZ001STAGE_STAGE"
+
+      CODIGO:
+        description: CODIGO
+        type: "string"
+
+      NOME:
+        description: NOME
+        type: "string"
+
+      TIPOAGENDA:
+        description: TIPOAGENDA
+        type: "string"
+
+      USERID:
+        description: USERID
+        type: "string"
+
+      USUARIO:
+        description: USUARIO
+        type: "string"
+
+
+
+
+  WSDLMZ001STUSRS:
+    properties:
+      AREGS:
+        description: WSDLMZ001 STUSR
+        type: array
+        items:
+          $ref: "#/definitions/WSDLMZ001STUSR_STUSR"
+
+      CMESSAGE:
+        description: CMESSAGE
+        type: "string"
+
+      CRET:
+        description: CRET
+        type: "string"
+
+
+
+
+  GxJsonError:
+    properties:
+      error:
+        $ref: "#/definitions/GxJsonError.error"
+
+
+  GxJsonError.error:
+    properties:
+      code:
+        type: "string"
+
+      message:
+        type: "string"
+
+
+    x-gx-level: "GxJsonError"
+
+

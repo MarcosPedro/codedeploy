@@ -1,0 +1,1 @@
+<%@ServiceHost Service= "GeneXus.Programs.perdaservice_services,perdaservice" %>

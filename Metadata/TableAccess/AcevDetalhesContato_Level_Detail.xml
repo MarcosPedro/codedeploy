@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dependencies type="name" name="AcevDetalhesContato_Level_Detail">
+  <Table name="Contatos" />
+  <Table name="ULTCON" />
+  <Table name="ContAgenda" />
+</Dependencies>

@@ -1,0 +1,1 @@
+<%@ServiceHost Service= "GeneXus.Programs.setabordagensweb_services,setabordagensweb" %>

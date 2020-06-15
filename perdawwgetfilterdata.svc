@@ -1,0 +1,1 @@
+<%@ServiceHost Service= "GeneXus.Programs.perdawwgetfilterdata_services,perdawwgetfilterdata" %>
